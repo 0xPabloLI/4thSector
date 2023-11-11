@@ -1,0 +1,1275 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "c4da9e5c9e0d8dc655286547106309494b585cd40aee4361119e9354a16dcc45",
+          "withoutMetadata": "29b5141468945046bcf1556d000a065fddc9a11d4130dd0db9e72a55ebabbe3d",
+          "linkedWithoutMetadata": "29b5141468945046bcf1556d000a065fddc9a11d4130dd0db9e72a55ebabbe3d"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)",
+          "getAccountsAndShares()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "c4da9e5c9e0d8dc655286547106309494b585cd40aee4361119e9354a16dcc45",
+          "withoutMetadata": "29b5141468945046bcf1556d000a065fddc9a11d4130dd0db9e72a55ebabbe3d",
+          "linkedWithoutMetadata": "29b5141468945046bcf1556d000a065fddc9a11d4130dd0db9e72a55ebabbe3d"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)",
+          "getAccountsAndShares()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "6815c1227303118c2f7ed16e40367653cca6c522368d533790ce28cf6fcf245b",
+          "withoutMetadata": "cd6ba3eb4539067673318fa52f7ebcfaf82b9ee3866ded909b077638a2426851",
+          "linkedWithoutMetadata": "cd6ba3eb4539067673318fa52f7ebcfaf82b9ee3866ded909b077638a2426851"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)",
+          "getAccountsAndShares()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "6815c1227303118c2f7ed16e40367653cca6c522368d533790ce28cf6fcf245b",
+          "withoutMetadata": "cd6ba3eb4539067673318fa52f7ebcfaf82b9ee3866ded909b077638a2426851",
+          "linkedWithoutMetadata": "cd6ba3eb4539067673318fa52f7ebcfaf82b9ee3866ded909b077638a2426851"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)",
+          "getAccountsAndShares()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "34c0937998131d3f18e234fee5a416b33d3ef79163753ddc25a5ba20c5459945",
+          "withoutMetadata": "528504e9e0c8a90fc58dabdaa06143e13dd0103df062fe3fc7b559942bd6f109",
+          "linkedWithoutMetadata": "528504e9e0c8a90fc58dabdaa06143e13dd0103df062fe3fc7b559942bd6f109"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    },
+    {
+      "contracts/fourthSector.sol:IERC20": {
+        "src": "contracts/fourthSector.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:INFT": {
+        "src": "contracts/fourthSector.sol:8",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        },
+        "solcVersion": "0.8.18"
+      },
+      "contracts/fourthSector.sol:fourthSector": {
+        "src": "contracts/fourthSector.sol:12",
+        "version": {
+          "withMetadata": "34c0937998131d3f18e234fee5a416b33d3ef79163753ddc25a5ba20c5459945",
+          "withoutMetadata": "528504e9e0c8a90fc58dabdaa06143e13dd0103df062fe3fc7b559942bd6f109",
+          "linkedWithoutMetadata": "528504e9e0c8a90fc58dabdaa06143e13dd0103df062fe3fc7b559942bd6f109"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "addValidNFTContract(address)",
+          "removeValidNFTContract(address)",
+          "updateAccount(address,bool)",
+          "submitClaim(uint256,string)",
+          "verifyWorkerClaim(address,uint256,bool)",
+          "sponsor(uint256,string,address,uint256)",
+          "support(uint256,string,address,uint256)",
+          "verifyOrModifyClaim(address,uint256,uint256,bool)",
+          "calculateShare(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "fourthSector",
+            "src": "contracts/fourthSector.sol:46"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "admin",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:13"
+            },
+            {
+              "label": "validNFTContracts",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_mapping(t_address,t_bool)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:31"
+            },
+            {
+              "label": "accounts",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_mapping(t_address,t_struct(Account)49_storage)",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:32"
+            },
+            {
+              "label": "accountList",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "fourthSector",
+              "src": "contracts/fourthSector.sol:33"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_array(t_struct(Claim)36_storage)dyn_storage": {
+              "label": "struct fourthSector.Claim[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_bool)": {
+              "label": "mapping(address => bool)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_struct(Account)49_storage)": {
+              "label": "mapping(address => struct fourthSector.Account)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Account)49_storage": {
+              "label": "struct fourthSector.Account",
+              "members": [
+                {
+                  "label": "totalAttributionPoints",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "isWorker",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "claims",
+                  "type": "t_array(t_struct(Claim)36_storage)dyn_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "isSponsor",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isSupporter",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(Claim)36_storage": {
+              "label": "struct fourthSector.Claim",
+              "members": [
+                {
+                  "label": "points",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "ipfsUri",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "verified",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenAddress",
+                  "type": "t_address",
+                  "offset": 1,
+                  "slot": "2"
+                },
+                {
+                  "label": "tokenId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.18"
+      }
+    }
+  ]
+}
